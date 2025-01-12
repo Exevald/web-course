@@ -3,4 +3,5 @@
 
 # Полезные материалы
 
-[Чек-лист для проверки качества кода](./coding-conventions/README.md)
+ - [Чек-лист для проверки качества кода](./coding-conventions/README.md)
+ - [Примеры кода](./samples/README.md)
