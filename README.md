@@ -1,2 +1,6 @@
 # web-course
-Materials and tasks for web course
+Курс по веб-разработке
+
+# Полезные материалы
+
+[Чек-лист для проверки качества кода](./coding-conventions/README.md)
