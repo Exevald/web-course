@@ -7,7 +7,7 @@ header {
     gap: 74px;
 }
 
-.top-panel{
+.top-panel {
     display: flex;
     width: 100%;
     flex-direction: row;
@@ -15,13 +15,13 @@ header {
     align-items: center;
 }
 
-.top-panel__logo{
-   display: flex;
-   justify-content: center;
-   flex-grow: 2;
+.top-panel__logo {
+    display: flex;
+    justify-content: center;
+    flex-grow: 2;
 }
 
-.top-panel__navigation-panel{
+.top-panel__navigation-panel {
     display: flex;
     flex-direction: row;
     gap: 40px;
@@ -29,12 +29,13 @@ header {
     font-size: 16px;
     flex-grow: 3;
 }
-.top-panel__navigation-panel a{
+
+.top-panel__navigation-panel a {
     text-decoration: none;
     color: #272F3A;
 }
 
-.header-title{
+.header-title-section {
     max-width: 1062px;
     display: flex;
     flex-direction: column;
@@ -42,34 +43,34 @@ header {
     text-align: center;
 }
 
-.header-title h1 {
+.header-title-sectionh1 {
     font-family: "Montserrat", sans-serif;
     font-size: 72px;
     color: #002B6B;
 }
 
-.header-title span {
+.header-title-section span {
     font-family: "Montserrat", sans-serif;
     font-size: 18px;
     color: #414D60;
 }
 
-.peoples-block{
+.peoples-block {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     padding: 80px 63px 80px 63px;
-    gap:20px;
+    gap: 20px;
     row-gap: 29px;
 }
 
-.block__elem{
+.peoples-block__elem {
     width: 241px;
     height: 282px;
     border-radius: 20px;
 }
 
-.block__elem img {
+.peoples-block__elem img {
     width: 100%;
 }
