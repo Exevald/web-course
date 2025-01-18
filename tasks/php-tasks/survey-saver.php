@@ -20,14 +20,14 @@ if (file_exists($filePath)) {
 } else {
     $file = fopen($filePath, 'wb+');
 }
-rewind($file);
-for ($i = 0, $iMax = count($inputPersonInfo); $i < $iMax; $i++) {
-    if (!empty($_GET[$inputPersonInfo[$i]])) {
-        fwrite($file, $outputPersonInfo[$i] . ': ' . $_GET[$inputPersonInfo[$i]] . PHP_EOL);
-    } else {
-        fgets($file, 4096);
-    }
+
+function addPersonInfoToFile($file, array $inputPersonInfo, array $outputPersonInfo): void
+{
+    # Необходимо дописать функцию заполнения файла информацией о пользователе
+    # Стоит помнить, что не переданные параметры пользователя не обновляются в файле
 }
+
+addPersonInfoToFile($file, $inputPersonInfo, $outputPersonInfo);
 
 fclose($file);
 echo('File created!');

@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+# Функция подсчёта количества символов и цифр у пароля. Необходимо разобраться, как она работает
 function countPasswordSymbolsAndDigits(
     string $text,
     int    &$digitsCount,
@@ -29,7 +30,7 @@ function countPasswordSymbolsAndDigits(
     }
 }
 
-function countPasswordSecurity(
+function checkPasswordStrength(
     int $passwordLength,
     int $digitsCount,
     int $uppercaseSymbolsCount,
@@ -38,37 +39,21 @@ function countPasswordSecurity(
     int $repeatedSymbolsCount
 ): int
 {
-    $security = 4 * $passwordLength;
-    $security += 4 * $digitsCount;
-    if ($uppercaseSymbolsCount > 0) {
-        $security += 2 * ($passwordLength - $uppercaseSymbolsCount);
-    }
-    if ($lowercaseSymbolsCount > 0) {
-        $security += 2 * ($passwordLength - $lowercaseSymbolsCount);
-    }
-    if ($lettersCount === $passwordLength) {
-        $security -= $passwordLength;
-    }
-    if ($digitsCount === $passwordLength) {
-        $security -= $passwordLength;
-    }
-    $security -= $repeatedSymbolsCount;
+    # Тут необходимо посчитать финальное значение безопасности пароля, основываясь на данных, полученных в параметрах функции
 
-    return $security;
+    return 0;
 }
 
+# Получение пароля через GET-запрос
 $text = $_GET['text'];
 if (empty($text)) {
     exit('Empty input!');
 }
 
-preg_match('/^[a-zA-Z0-9]+/', $text, $matches);
-$passwordLength = strlen($matches[0]);
-$different = strlen($text) - $passwordLength;
+# Тут необходимо добавить проверки на наличие лишних символов в строке
+# Пароль должен состоять только из английских символов в верхнем и нижнем регистрах, а также из цифр
 
-if ($different > 0) {
-    exit('Error - char in ' . $passwordLength . ' position not english bet or digit');
-}
+$passwordLength = strlen($text);
 
 $allSymbols = array();
 $digitsCount = 0;
@@ -86,7 +71,7 @@ countPasswordSymbolsAndDigits(
     $repeatedSymbolsCount
 );
 
-$passwordSecurity = countPasswordSecurity(
+$passwordStrength = checkPasswordStrength(
     $passwordLength,
     $digitsCount,
     $lettersCount,
@@ -95,4 +80,4 @@ $passwordSecurity = countPasswordSecurity(
     $repeatedSymbolsCount
 );
 
-echo('Security of your password = ' . $passwordSecurity);
+echo('Strength of your password = ' . $passwordStrength);
