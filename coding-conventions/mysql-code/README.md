@@ -27,5 +27,4 @@ VALUES ('Post about traveling',
 DELETE
 FROM post
 WHERE title = 'Angry article about PHP';
-
 ```
