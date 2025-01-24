@@ -1,11 +1,6 @@
 <?php
 declare(strict_types=1);
 
-$text = $_GET['text'];
-if (empty($text)) {
-    exit('Empty input!');
-}
-
 $requiredFields = ['email'];
 $email = $_GET['email'];
 $inputPersonInfo = ['first_name', 'last_name', 'email', 'age'];
